@@ -1,7 +1,5 @@
 # 🔍 VIEWVER
 
-![Bug Bounty Banner](https://www.bugcrowd.com/wp-content/uploads/2019/11/Bugcrowd-Guide-to-Bug-Bounty-Programs-COVER.jpg)
-
 ## 📚 Introduction
 
 This comprehensive collection of Google dorks is designed for ethical hackers, security researchers, and bug bounty hunters seeking to discover vulnerable targets and security programs that offer rewards. These specialized search queries leverage Google's advanced search operators to uncover sensitive information, potential vulnerabilities, and bug bounty programs that might not be easily discoverable through conventional means.
