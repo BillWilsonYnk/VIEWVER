@@ -1,0 +1,377 @@
+# Comprehensive Google Dorks List for Bug Bounty Hunting
+
+## Elite Bug Bounty Hunting Dorks
+
+```
+# High-Value Targets
+intitle:"bug bounty" AND intext:"$10,000" OR intext:"$20,000"
+intitle:"security program" AND intext:"critical" AND (intext:"$5000" OR intext:"$10000")
+intext:"we pay up to" AND (intext:"$10,000" OR intext:"$20,000") AND intext:"security vulnerability"
+inurl:bounty intitle:guidelines intext:"critical vulnerabilities" (intext:"$5,000" OR intext:"$10,000" OR intext:"$15,000")
+"responsible disclosure" intitle:"bounty" AND (intext:"up to $" OR intext:"up to €") -huntr -hackerone -bugcrowd
+"vulnerability reward program" -google -facebook -microsoft -twitter AND (intext:"$" OR intext:"€" OR intext:"£")
+
+# Fresh Programs (Time-Based)
+"new bug bounty program" "launched" after:2023
+"security vulnerability reporting" after:2023-01-01 -site:hackerone.com -site:bugcrowd.com
+after:2023 intext:"announcing our new bug bounty program" -site:medium.com
+
+# Corporate Programs Without Third-Party Platforms
+-site:hackerone.com -site:bugcrowd.com -site:intigriti.com -site:yeswehack.com -site:synack.com intext:"security vulnerability" intext:"reward" inurl:security
+-site:hackerone.com -site:bugcrowd.com -site:intigriti.com -site:yeswehack.com intitle:"security vulnerability reward program"
+"report a vulnerability" -site:hackerone.com -site:bugcrowd.com -site:intigriti.com -site:yeswehack.com intext:"bounty" OR intext:"reward"
+
+# Industry-Specific Programs
+site:*.fin.* "security vulnerability" "report" "reward"
+site:*.bank.* "security vulnerability" "report" "reward"
+site:*.gov.* "vulnerability disclosure" "bounty" -site:hackerone.com
+site:*.edu "vulnerability disclosure policy" "reward" OR "bounty" -site:hackerone.com
+site:*.health.* "security" "vulnerability" "reporting" "reward"
+site:*.crypto.* "bug bounty" OR "vulnerability reward"
+site:*.nft.* "security" "vulnerability" "bounty"
+
+# Blockchain and Crypto-Specific
+intext:"smart contract" AND intext:"bug bounty" AND intext:"up to" AND (intext:"$50,000" OR intext:"$100,000")
+inurl:hackenproof intext:"blockchain" intext:"reward"
+intext:"web3" AND intext:"security" AND intext:"bounty" -site:twitter.com -site:medium.com
+site:immunefi.com inurl:/bounty/ intext:"reward" (intext:"Critical" OR intext:"High")
+"solidity" "security vulnerability" "bounty" -github -medium
+
+# Limited-Disclosure Programs (Potentially Higher Rewards)
+intext:"private bug bounty program" AND intext:"invitation" AND intext:"rewards"
+"invite-only bug bounty" "high rewards" -site:hackerone.com -site:bugcrowd.com
+"exclusive security program" "vulnerability" "reward" -site:twitter.com
+
+# Multiple Program Hunting
+site:docs.*.* intext:"security vulnerability" intext:"reward" OR intext:"bounty"
+site:security.*.* intext:"vulnerability" AND intext:"reward" -site:hackerone.com -site:bugcrowd.com
+```
+
+## Bug Bounty Program Discovery
+
+```
+inurl:/bug-bounty
+inurl:/bug bounty
+inurl:/security
+inurl:security.txt
+inurl:security "reward"
+inurl:/responsible-disclosure
+inurl:/responsible disclosure
+inurl:/responsible-disclosure/ reward
+inurl:/responsible-disclosure/ swag
+inurl:/responsible-disclosure/ bounty
+inurl:'/responsible disclosure' hoodie
+responsible disclosure swag r=h:com
+responsible disclosure hall of fame
+inurl:responsible disclosure $50
+responsible disclosure europe
+responsible disclosure white hat
+white hat program
+insite:"responsible disclosure" -inurl:nl
+intext responsible disclosure
+site eu responsible disclosure
+site .nl responsible disclosure
+site responsible disclosure
+responsible disclosure:sites
+responsible disclosure r=h:nl
+responsible disclosure r=h:uk
+responsible disclosure r=h:eu
+responsible disclosure bounty r=h:nl
+responsible disclosure bounty r=h:uk
+responsible disclosure bounty r=h:eu
+responsible disclosure swag r=h:nl
+responsible disclosure swag r=h:uk
+responsible disclosure swag r=h:eu
+responsible disclosure reward r=h:nl
+responsible disclosure reward r=h:uk
+responsible disclosure reward r=h:eu
+"powered by bugcrowd" -site:bugcrowd.com
+"submit vulnerability report"
+"submit vulnerability report" | "powered by bugcrowd" | "powered by hackerone"
+site:*.gov.* "responsible disclosure"
+intext:"we take security very seriously"
+site:responsibledisclosure.com
+inurl:'vulnerability-disclosure-policy' reward
+intext:Vulnerability Disclosure site:nl
+intext:Vulnerability Disclosure site:eu
+site:*.*.nl intext:security report reward
+site:*.*.nl intext:responsible disclosure reward
+"security vulnerability" "report"
+inurl:"security report"
+"responsible disclosure" university
+inurl:/responsible-disclosure/ university
+buy bitcoins "bug bounty"
+inurl:/security ext:txt "contact"
+"powered by synack"
+intext:responsible disclosure bounty
+inurl:private bugbountyprogram
+inurl:/.well-known/security ext:txt
+inurl:/.well-known/security ext:txt intext:hackerone
+inurl:/.well-known/security ext:txt -hackerone -bugcrowd -synack -openbugbounty
+inurl:reporting-security-issues
+inurl:security-policy.txt ext:txt
+site:*.*.* inurl:bug inurl:bounty
+site:help.*.* inurl:bounty
+site:support.*.* intext:security report reward
+intext:security report monetary inurl:security
+intext:security report reward inurl:report
+site:security.*.* inurl:bounty
+site:*.*.de inurl:bug inurl:bounty
+site:*.*.uk intext:security report reward
+site:*.*.cn intext:security report reward
+"vulnerability reporting policy"
+"van de melding met een minimum van een" -site:responsibledisclosure.nl
+inurl:responsible-disclosure-policy
+"If you believe you've found a security vulnerability"
+intext:"BugBounty" and intext:"BTC" and intext:"reward"
+intext:bounty inurl:/security
+inurl:"bug bounty" and intext:"€" and inurl:/security
+inurl:"bug bounty" and intext:"$" and inurl:/security
+inurl:"bug bounty" and intext:"INR" and inurl:/security
+inurl:/security.txt "mailto*" -github.com -wikipedia.org -portswigger.net -magento
+/trust/report-a-vulnerability
+site:*.edu intext:security report vulnerability
+"cms" bug bounty
+"If you find a security issue" "reward"
+"responsible disclosure" intext:"you may be eligible for monetary compensation"
+inurl:"responsible disclosure", "bug bounty", "bugbounty"
+intext:we offer a bounty
+responsible disclosure inurl:in
+site:*.br responsible disclosure
+site:*.at responsible disclosure
+site:*.be responsible disclosure
+site:*.au responsible disclosure
+site:*/security.txt "bounty"
+inurl:bug bounty intext:"rupees"
+inurl:bug bounty intext:"₹"
+inurl:responsible disclosure intext:"INR"
+```
+
+## File Exposure and Sensitive Information
+
+```
+site:target.com filetype:pdf intext:"confidential"
+site:target.com filetype:xls | filetype:xlsx intext:"password" | intext:"credentials"
+site:target.com ext:log intext:"password" | intext:"credentials" | intext:"admin"
+site:target.com intitle:"index of" intext:config | intext:backup | intext:password
+site:target.com inurl:wp-content/uploads/ intext:password
+site:pastebin.com "target.com" password
+site:github.com "target.com" password | api_key | apikey | secret | token
+site:gitlab.com "target.com" password | api_key | apikey | secret | token
+site:target.com ext:sql intext:password | intext:pwd | intext:login
+site:target.com inurl:login | inurl:auth | inurl:admin | inurl:portal
+site:target.com ext:xml | ext:conf | ext:cnf | ext:ini | ext:env | ext:json
+site:target.com ext:bkf | ext:bkp | ext:bak | ext:old | ext:backup
+```
+
+## Technical Vulnerabilities
+
+```
+site:target.com intext:"SQL syntax error"
+site:target.com intext:"Fatal error"
+site:target.com intext:"Warning: mysqli_"
+site:target.com intext:"Warning: mysql_"
+site:target.com intext:"Warning: pg_"
+site:target.com intext:"Warning: SQLite3::"
+site:target.com intext:"supplied argument is not a valid MySQL"
+site:target.com intext:"You have an error in your SQL syntax"
+site:target.com intext:"ORA-01797"
+site:target.com intext:"Microsoft SQL Native Client error"
+site:target.com intext:"uncaught exception"
+site:target.com intext:"Uncaught Error"
+site:target.com intext:"Syntax error" | intext:"syntax error"
+site:target.com intext:"500 | Internal Server Error"
+site:target.com intext:"Cannot execute as the database principal"
+site:target.com intext:"Notice: Undefined variable:"
+site:target.com intext:"Debug mode enabled"
+site:target.com intext:"Strict Standards:"
+site:target.com intext:"Call Stack:"
+```
+
+## API and Development Environment Exposure
+
+```
+site:target.com inurl:api intext:"key"
+site:target.com inurl:api intext:"token"
+site:target.com inurl:api intext:"password" | intext:"credentials"
+site:target.com intitle:"api documentation" | intitle:"API Documentation"
+site:target.com inurl:swagger | inurl:api-docs | inurl:openapi.json
+site:target.com inurl:test | inurl:dev | inurl:development | inurl:staging
+site:target.com inurl:demo | inurl:beta | inurl:qa | inurl:sandbox
+site:target.com inurl:api/v1 | inurl:api/v2 | inurl:api/v3
+site:target.com "api key" | "apikey" | "client_secret" | "api_token"
+site:target.com "aws_access_key" | "aws_secret_key"
+site:target.com "private_key" | "client_id" | "client_secret"
+site:target.com "firebase" | "oauth" | "token"
+```
+
+## Server and Application Disclosure
+
+```
+site:target.com intitle:"phpinfo" | intitle:"PHP Info"
+site:target.com intitle:"Apache Status" | intitle:"Apache Server Status"
+site:target.com intitle:"nginx status" | intitle:"nginx test page"
+site:target.com intitle:"Installation" intext:"Welcome to" intext:"Install"
+site:target.com intitle:"Setup" | intitle:"Configuration"
+site:target.com intitle:"Admin Login" | intitle:"Administrator Login"
+site:target.com intitle:"Dashboard" | intitle:"Control Panel"
+site:target.com inurl:phpmyadmin | inurl:adminer | inurl:webadmin
+site:target.com inurl:server-status | inurl:server-info
+site:target.com "Powered by" | "Running on" | "Built with"
+site:target.com intitle:"Error Occurred While Processing Request"
+```
+
+## Additional Regional and Custom Dorks
+
+```
+site:*.*.jp intext:security report reward
+site:*.*.ca intext:vulnerability disclosure policy
+site:*.*.in responsible disclosure reward
+site:*.co.uk intext:security vulnerability bounty
+site:*.fr "signaler une vulnérabilité" récompense
+site:*.es "programa de recompensas" seguridad
+site:*.de "sicherheitslücke melden" belohnung
+site:*.ru "уязвимость безопасности" вознаграждение
+site:*.cn "安全漏洞" "奖励"
+site:*.gov intext:"security vulnerability" "report"
+site:*.edu "security vulnerability" "reward"
+site:*.org "responsible disclosure" "bounty"
+site:*.mil "security vulnerability" "report"
+```
+
+## Cloud Storage and Services
+
+```
+site:s3.amazonaws.com "target.com"
+site:blob.core.windows.net "target.com"
+site:googleapis.com "target.com"
+site:drive.google.com "target.com"
+site:docs.google.com "target.com" password | credentials
+site:onedrive.live.com "target.com"
+site:box.com "target.com"
+site:dropbox.com "target.com"
+```
+
+## Content Management Systems (CMS) Specific
+
+```
+site:target.com inurl:wp-content | inurl:wp-includes
+site:target.com inurl:administrator | inurl:admin | inurl:adminpanel | inurl:admins
+site:target.com inurl:joomla | inurl:drupal | inurl:wordpress | inurl:wp-admin
+site:target.com inurl:cpanel | inurl:webmail | inurl:webadmin | inurl:webmaster
+site:target.com inurl:typo3 | inurl:manager | inurl:panel | inurl:management
+site:target.com intitle:"Magento Admin" | intitle:"Shopify Admin"
+```
+
+## Source Code and Version Control
+
+```
+site:github.com | site:gitlab.com | site:bitbucket.org "target.com" password | secret | credential
+site:github.com | site:gitlab.com | site:bitbucket.org "target.com" token | api_key | apikey
+site:github.com | site:gitlab.com | site:bitbucket.org "target.com" config
+site:github.com | site:gitlab.com | site:bitbucket.org "target.com" .env | .config
+site:github.com | site:gitlab.com | site:bitbucket.org "target.com" connect | connection
+```
+
+## Mobile Application Related
+
+```
+site:play.google.com intext:"target.com"
+site:apps.apple.com intext:"target.com"
+site:apkpure.com intext:"target.com"
+site:target.com intext:"android app" | intext:"ios app" | intext:"mobile app"
+```
+
+## Miscellaneous Useful Dorks
+
+```
+site:target.com "username" | "userid" | "user" password
+site:target.com "access denied for user" | "incorrect syntax near"
+site:target.com "error occured at" | "error occurred at" | "debug information"
+site:target.com "Certificate error" | "ssl certificate" | "cert error"
+site:target.com "phpMyAdmin" | "adminer" | "plesk" | "cpanel" | "whm"
+site:target.com "inurl:sso" | "inurl:auth" | "inurl:login" | "inurl:signin"
+```
+
+## Advanced Technical Vulnerability Dorks
+
+```
+# Advanced Server Misconfiguration
+intitle:"Apache Tomcat" intext:"username" intext:"password" intitle:"manager"
+intitle:"Index of" intext:".htpasswd" | intext:".htaccess" | intext:"web.config"
+intitle:"Dashboard Jenkins" | intitle:"Dashboard GitLab" | intitle:"Grafana"
+intitle:"Index of" intext:"config" | intext:"properties" | intext:"settings"
+intitle:"NetData Dashboard" | intitle:"Kibana" | intitle:"Elasticsearch"
+inurl:"/.git" intitle:"Index of /.git"
+intitle:"index of" intext:"env.bak" | intext:".env.example" | intext:".env.old" | intext:".env.dev"
+
+# GraphQL Exposure
+inurl:"/graphql" | inurl:"/graphiql" | inurl:"/altair" | inurl:"/playground"
+intitle:"GraphQL Playground" | intitle:"GraphiQL Explorer"
+site:target.com inurl:graphql intext:"query" intext:"mutation"
+
+# CORS and Sensitive Headers
+site:target.com "Access-Control-Allow-Origin: *" | "Access-Control-Allow-Credentials: true"
+site:*/security.txt "Contact:" -github -gitlab -wikipedia
+
+# JWT Exposure and Authentication Issues
+intext:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" intext:"Authorization: Bearer"
+intitle:"login" intext:"client_id" intext:"redirect_uri" intext:"response_type=token"
+
+# Cloud Configuration
+site:http://s3.amazonaws.com filetype:xls password | filetype:xlsx password
+site:http://blob.core.windows.net | site:http://googleapis.com "secret" | "api_key" | "password"
+intitle:"Index of" "parent directory" "azurekeyvault" | "awssecret" | "gcpcredential"
+intitle:"Docker Registry" "repositories"
+inurl:".traefik.toml" | inurl:"traefik.yml" intext:"entryPoints"
+
+# Advanced Code Injection Points
+site:target.com inurl:redirect= | inurl:return= | inurl:next= | inurl:url= | inurl:goto=
+site:target.com inurl:jsonp= | inurl:callback=
+site:target.com inurl:cmd= | inurl:exec= | inurl:query= | inurl:code= | inurl:do= | inurl:search= | inurl:view=
+site:target.com inurl:file= | inurl:path= | inurl:style= | inurl:template= | inurl:php_path= | inurl:document=
+
+# Exposed Log Files and Debug Information
+intitle:"index of" intext:"nginx.log" | intext:"nginx_error.log" | intext:"apache.log"
+site:target.com ext:log intext:"exception in" | intext:"fatal error" | intext:"stack trace"
+inurl:/logs/production | inurl:/logs/dev | inurl:/logs/error
+site:pastebin.com | site:paste.ee "BEGIN RSA PRIVATE KEY" | "access_key" | "secret_key"
+
+# Kubernetes and Container Exposure
+inurl:"/api/v1/namespaces" intext:"metadata" intext:"annotations"
+intitle:"Kubernetes Dashboard" intext:"Overview" intext:"Namespaces"
+inurl:".kube/config" intext:"apiVersion" intext:"clusters"
+```
+
+## Elite Bug Bounty Hunter Methodology Dorks
+
+```
+# Subdomain Takeover Indicators
+"There is no app configured at that hostname" | "NoSuchBucket" | "No such app" | "herokucdn.com" | "github.io" | "pages.github.com"
+"You're seeing the default Netlify page" | "There isn't a GitHub Pages site here"
+"No settings were found for this company" | "Trying to access your account?"
+"The specified bucket does not exist" | "Repository not found" | "Sorry, We Couldn't Find That Page"
+
+# Secret Keys Finding
+intext:"BEGIN OPENSSH PRIVATE KEY" | intext:"BEGIN RSA PRIVATE KEY" | intext:"BEGIN DSA PRIVATE KEY" | intext:"BEGIN EC PRIVATE KEY"
+"-----BEGIN PGP PRIVATE KEY BLOCK-----" | "ssh-rsa" | "ssh-dss" | "PRIVATE KEY" ext:pem | ext:ppk | ext:key
+"Authorization: Basic" | "Authorization: Bearer" | "Authorization: API" | "auth=" | "auth_token="
+"FACEBOOK_CLIENT_SECRET" | "TWITTER_CONSUMER_SECRET" | "GOOGLE_OAUTH_SECRET" | "AWS_ACCOUNT_ID"
+"MAILGUN_API_KEY" | "TWILIO_AUTH_TOKEN" | "CLOUDFLARE_API_KEY" | "STRIPE_SECRET_KEY"
+
+# Advanced Parameters Exposure
+inurl:"?q=" | inurl:"&q=" | inurl:"?s=" | inurl:"&s=" | inurl:"?id=" | inurl:"&id=" 
+inurl:"?page=" | inurl:"&page=" | inurl:"?dir=" | inurl:"&dir=" | inurl:"?search=" | inurl:"&search="
+inurl:"?file=" | inurl:"&file=" | inurl:"?document=" | inurl:"&document=" | inurl:"?folder=" | inurl:"&folder="
+
+# Sensitive File Exposure by Industry
+inurl:wp-content/uploads/backup-db/ | inurl:wp-content/uploads/backupbuddy/
+site:target.com intitle:"backup" | intitle:"back up" | intitle:"back-up" filetype:zip | filetype:rar | filetype:sql | filetype:tar.gz
+site:target.com ext:config | ext:conf | ext:ini | ext:yml | ext:yaml | ext:properties | ext:env | ext:bak intext:"password" | intext:"credential" | intext:"secret"
+site:target.com filetype:git | filetype:svn | filetype:ds_store | filetype:bash_history
+
+# Advanced LFI/RFI Testing  
+inurl:"=http://" | inurl:"=https://" | inurl:"=ftp://" | inurl:"=file://"
+inurl:"/proc/self/environ" | inurl:"/proc/self/cmdline" | inurl:"/proc/self/cwd" | inurl:"/proc/self/fd/"
+inurl:"/etc/passwd" | inurl:"/etc/shadow" | inurl:"/etc/hosts" | inurl:"/etc/hostname"
+```
